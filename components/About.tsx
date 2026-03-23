@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import Image from 'next/image'
 import { motion, useInView } from 'framer-motion'
 
 const highlights = [
@@ -129,21 +130,16 @@ export default function About() {
             >
               <div
                 className="relative overflow-hidden rounded-2xl w-full max-w-sm mx-auto"
-                style={{ aspectRatio: '3/4', background: 'var(--card)', border: '1px solid var(--border)' }}
+                style={{ aspectRatio: '3/4' }}
               >
-                {/* Geometric decoration */}
-                <div
-                  className="absolute inset-4 rounded-xl border border-[var(--border)] opacity-50"
-                  style={{ borderStyle: 'dashed' }}
+                <Image
+                  src="/images/isabel-new.jpg"
+                  alt="Isabel Borgen — Digital Marketing & Analytics"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                  sizes="(max-width: 768px) 100vw, 400px"
                 />
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--border)" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                    <circle cx="8.5" cy="8.5" r="1.5" />
-                    <polyline points="21 15 16 10 5 21" />
-                  </svg>
-                  <span className="text-xs text-[var(--border)] tracking-widest uppercase">Photo</span>
-                </div>
                 {/* Accent stripe */}
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-[var(--accent)] opacity-70" />
               </div>
