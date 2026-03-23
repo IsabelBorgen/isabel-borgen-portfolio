@@ -22,6 +22,7 @@ export interface Project {
   results: ProjectResult[];
   liveUrl?: string;
   tiktokUrl?: string;
+  coverImage?: string;
 }
 
 export const projects: Project[] = [
@@ -35,6 +36,7 @@ export const projects: Project[] = [
     tools: ["HubSpot", "SEO", "UX/UI", "Google Ads", "Meta Ads"],
     liveUrl: "https://digifyactive.com/",
     tiktokUrl: "https://www.tiktok.com/@digify.active/video/7577903294517890326",
+    coverImage: "/projects/digify-active.jpg",
     overview: "Built a full conversion-focused website for Digify Active, a niche digital marketing agency targeting gyms and fitness studios. The project covered strategy, brand identity, UX/UI design, and performance marketing setup from the ground up.",
     approach: [
       {
@@ -86,6 +88,7 @@ export const projects: Project[] = [
     cardSummary: "Developed a persona-driven social media strategy to grow brand awareness and weeknight footfall for a local Barcelona hi-fi bar.",
     oneSentenceOutcome: "Turning a local hi-fi bar into a 'hidden gem' through atmosphere-driven storytelling.",
     tools: ["Instagram", "TikTok", "Facebook Business", "Answer-the-Public", "SMART Goals Framework", "Canva"],
+    coverImage: "/projects/oblicuo-hifi.jpg",
     overview: "Developed a comprehensive 3-month social media strategy for Oblicuo, a local hi-fi bar in Barcelona, with the goal of increasing brand awareness and driving weeknight footfall through organic and earned media.",
     approach: [
       {
@@ -142,6 +145,7 @@ export const projects: Project[] = [
     cardSummary: "Quantitative research on how consumer innovativeness affects trust in online reviews and influencer marketing. Grade: A.",
     oneSentenceOutcome: "An award-winning deep dive into the psychology of digital trust.",
     tools: ["SPSS", "Quantitative Research", "Regression Analysis", "Survey Design", "Social Proof Theory"],
+    coverImage: "/projects/consumer-innovativeness-thesis.jpg",
     overview: "Bachelor thesis investigating how a consumer's inherent degree of innovativeness shapes their level of trust in Electronic Word-of-Mouth (eWOM) — specifically product reviews and influencer marketing. Achieved grade: A (Top Academic Honor).",
     approach: [
       {
@@ -193,6 +197,7 @@ export const projects: Project[] = [
     cardSummary: "Consulting engagement for a pre-market AI startup: designed a market entry strategy for synthetic medical image datasets.",
     oneSentenceOutcome: "Pivoting a generative AI startup into a high-value healthcare data provider.",
     tools: ["Strategic Market Analysis", "AI Generative Tech Frameworks", "Competitive Gap Analysis", "SaaS Business Model Design", "Phased Partnership Roadmap"],
+    coverImage: "/projects/zoria-smids.jpg",
     overview: "Consulting engagement for Zoria Tech, a pre-market startup, to identify a viable market entry strategy for their AI-driven visual content production software. Recommended pivoting toward healthcare with a new product: ZORIA SMIDs (Synthetic Medical Image Datasets).",
     approach: [
       {
