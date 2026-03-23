@@ -1,6 +1,7 @@
 'use client'
 
 import { motion, Variants } from 'framer-motion'
+import Image from 'next/image'
 import Link from 'next/link'
 import { projects, Project } from '@/data/projects'
 
@@ -38,17 +39,31 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     >
       <Link href={`/projects/${project.slug}`} className="block h-full">
         <div 
-          className="h-full bg-[var(--card)] rounded-2xl border border-[var(--border)] p-8 md:p-10 flex flex-col transition-all duration-500 group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.04)] group-hover:border-transparent relative overflow-hidden"
-          style={{ 
-            // Inline style for the accent glow on hover
-          }}
+          className="h-full bg-[var(--card)] rounded-2xl border border-[var(--border)] flex flex-col transition-all duration-500 group-hover:shadow-[0_20px_40px_rgba(0,0,0,0.04)] group-hover:border-transparent relative overflow-hidden"
         >
           {/* Border Glow Overlay */}
           <div 
-            className="absolute inset-0 border-2 border-transparent rounded-2xl transition-colors duration-500 group-hover:opacity-100 opacity-0 pointer-events-none"
+            className="absolute inset-0 border-2 border-transparent rounded-2xl transition-colors duration-500 group-hover:opacity-100 opacity-0 pointer-events-none z-10"
             style={{ borderColor: project.accentColor }}
           />
 
+          {/* Project Thumbnail */}
+          {project.coverImage && (
+            <div className="relative w-full overflow-hidden rounded-t-2xl" style={{ aspectRatio: '16/9', flexShrink: 0 }}>
+              <Image
+                src={project.coverImage}
+                alt={project.title}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              {/* Subtle overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+            </div>
+          )}
+
+          {/* Card Content */}
+          <div className="p-8 md:p-10 flex flex-col flex-1">
           {/* Category Pill */}
           <div className="mb-6 flex">
             <span 
@@ -105,6 +120,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </div>
+          </div>
           </div>
         </div>
       </Link>
