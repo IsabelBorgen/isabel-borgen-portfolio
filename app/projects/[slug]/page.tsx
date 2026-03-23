@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { projects } from '@/data/projects'
@@ -93,6 +94,20 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             ))}
           </div>
         </section>
+
+        {/* Cover Image */}
+        {project.coverImage && (
+          <div className="relative w-full rounded-2xl overflow-hidden mb-24" style={{ aspectRatio: '16/9' }}>
+            <Image
+              src={project.coverImage}
+              alt={`${project.title} — case study`}
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 768px) 100vw, 1200px"
+            />
+          </div>
+        )}
 
         {/* Overview & Stats Grid */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24">
