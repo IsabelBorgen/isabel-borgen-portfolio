@@ -41,11 +41,20 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     siteName: 'Isabel Borgen Portfolio',
+    images: [
+      {
+        url: '/images/OG Image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Isabel Borgen — Digital Marketing & Analytics Portfolio',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Isabel Borgen | Digital Marketing & Analytics',
     description: 'Where Data Meets Creativity — AI-Driven Marketing for the Next Era',
+    images: ['/images/OG Image.jpg'],
   },
   robots: {
     index: true,
